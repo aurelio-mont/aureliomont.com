@@ -6,37 +6,27 @@ import { education } from "@cv";
   <h3 class="title">Education</h3>
   <div class="row">
     <div class="timeline-box padd-15">
-        <div class="timeline shdow-dark">
-            timline
-        </div>
+      <div class="timeline shdow-dark">
+        {
+          education.map(({ institution, startDate, endDate, area }) => {
+            const startYear = new Date(startDate).getFullYear();
+            const endYear =
+              endDate != null ? new Date(endDate).getFullYear() : "Actual";
+            const years = `${startYear} - ${endYear}`;
+
+            return (
+                <div class="timeline-item">
+                    <div class="circle-dot"></div>
+                    <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i> {years}
+                    </h3>
+                    <h4 class="timeline-title">{area} </h4>
+                    <p class="timeline-text" >{institution}</p>
+                </div>
+            );
+          })
+        }
+      </div>
     </div>
   </div>
-  <ul>
-    {
-      education.map(({ institution, startDate, endDate, area }) => {
-        const startYear = new Date(startDate).getFullYear();
-        const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : "Actual";
-        const years = `${startYear} - ${endYear}`;
-
-        return (
-          <li>
-            <article>
-              <header>
-                <div>
-                  <h3>{institution}</h3>
-                </div>
-
-                <time>{years}</time>
-              </header>
-
-              <footer>
-                <p>{area}</p>
-              </footer>
-            </article>
-          </li>
-        );
-      })
-    }
-  </ul>
 </div>

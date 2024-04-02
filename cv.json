@@ -75,24 +75,24 @@
     }],
     "education": [
       {
-        "institution": "Universidad de Guadalajara",
+        "institution": "Universidad Autonoma de México",
         "url": "https://www.uoc.edu/portal/es/index.html",
-        "area": "Ingeniero de Software",
+        "area": "Master en Software",
         "studyType": "Bachelor",
-        "startDate": "2003-01-01",
-        "endDate": "2009-01-01",
+        "startDate": "2016-01-01",
+        "endDate": "2017-01-01",
         "score": "4.0",
         "courses": [
           "DB1101 - Basic SQL"
         ]
       },
       {
-        "institution": "Universidad Autonoma de México",
+        "institution": "Universidad de Guadalajara",
         "url": "https://www.uoc.edu/portal/es/index.html",
         "area": "Ingeniero de Software",
         "studyType": "Bachelor",
-        "startDate": "2016-01-01",
-        "endDate": "2017-01-01",
+        "startDate": "2003-01-01",
+        "endDate": "2009-01-01",
         "score": "4.0",
         "courses": [
           "DB1101 - Basic SQL"

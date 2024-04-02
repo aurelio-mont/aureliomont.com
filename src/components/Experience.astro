@@ -4,46 +4,35 @@ import { work } from "@cv";
 
 <div class="experience padd-15">
   <h3 class="title">Experience</h3>
-  <ul>
-    {
-      work.map(
-        ({ name, startDate, endDate, position, summary, highlights, url }) => {
-          const startYear = new Date(startDate).getFullYear();
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual";
-
-          return (
-            <li>
-              <article>
-                <header>
-                  <div>
-                    <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
-                        {name}
-                      </a>
+  <div class="row">
+    <div class="timeline-box padd-15">
+      <div class="timeline shdow-dark">
+        {
+        work.map(
+            ({ name, startDate, endDate, position, summary, highlights, url }) => {
+            const startYear = new Date(startDate).getFullYear();
+            const endYear =
+                endDate != null ? new Date(endDate).getFullYear() : "Actual";
+            const years = `${startYear} - ${endYear}`;
+            return (
+            <div class="timeline-item">
+                    <div class="circle-dot"></div>
+                    <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i> {years}
                     </h3>
-                    <h4>{position}</h4>
-                  </div>
-
-                  <div>
-                    <time datetime={startDate} data-title={startDate}>
-                      {startYear}
-                    </time>
-                    {" - "}
-                    <time datetime={endDate} data-title={endDate}>
-                      {endYear}
-                    </time>
-                  </div>
-                </header>
-
-                <footer>
-                  <p>{summary}</p>
-                </footer>
-              </article>
-            </li>
-          );
+                    <h4 class="timeline-title">
+                        <a href={url} title={`Ver ${name}`} target="_blank">
+                            {name}
+                        </a> 
+                    </h4>
+                    <h5 class="timeline-title">{position}</h5>
+                    <p class="timeline-text" >{summary}</p>
+                </div>
+            );
+            }
+        )
         }
-      )
-    }
-  </ul>
+        </div>
+    </div>
+</div>
 </div>

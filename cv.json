@@ -99,6 +99,33 @@
         ]
       }
     ],
+    "services": [
+      {
+        "title": "Diseño web personalizado",
+        "icon": "fa fa-mobile-alt",
+        "summary": "Es un servicio que implica la creación de un sitio web único y a medida para un cliente, sin utilizar plantillas preexistentes. Este enfoque permite una mayor libertad creativa y técnica para incorporar funciones específicas, reflejar la identidad de la marca y satisfacer las necesidades particulares del negocio."
+      },
+      {
+        "title": "Desarrollo de aplicaciones web",
+        "icon": "fa fa-laptop-code",
+        "summary": "El desarrollo de aplicaciones web es un servicio que permite crear herramientas digitales accesibles a través de Internet o intranet. Estas aplicaciones permiten a los usuarios obtener información e interactuar con la web de manera eficiente y segura."
+      },
+      {
+        "title": "Optimización para motores de búsqueda (SEO)",
+        "icon": "fa fa-magnifying-glass",
+        "summary": "La Optimización para Motores de Búsqueda (SEO) es una práctica que mejora la visibilidad de un sitio web en los resultados orgánicos de los motores de búsqueda. Implica técnicas como la optimización de contenido y la estructura del sitio web, con el objetivo de atraer tráfico relevante y aumentar la presencia en línea."
+      },
+      {
+        "title": "Marketing digital y estrategia de marca",
+        "icon": "fa fa-palette",
+        "summary": "El Marketing Digital y Estrategia de Marca es un conjunto de técnicas y acciones en medios digitales para promover una marca, producto o servicio, mejorando su visibilidad y posicionamiento en línea para atraer y retener clientes."
+      },
+      {
+        "title": "Soporte y mantenimiento web",
+        "icon": "fa fa-code",
+        "summary": "El soporte y mantenimiento web es un servicio que incluye acciones periódicas para asegurar el correcto funcionamiento de un sitio web, como actualizaciones de contenido, mejoras de seguridad y optimización del rendimiento."
+      }
+    ],
     "awards": [{
       "title": "Award",
       "date": "2014-11-01",

@@ -1,5 +1,5 @@
 ---
-import MainContent from "../MainContent.astro"
+import MainContent from "@/components/MainContent.astro"
 import { basics } from "@cv"
 const { name, label, summary, image } = basics
 
@@ -13,10 +13,10 @@ let labelArray = label.split(' '),
         <div class="container">
             <div class="row">
                 <div class="home-info padd-15">
-                    <h3 class="hello">Hello, my name is <span class="nane">{name}</span></h3>
-                    <h3 class="my-profession">I' m a {primera} <span class="typing">{ultima}</span></span></h3>
+                    <h3 class="hello">Hola, mi nombre es <span class="nane">{name}</span></h3>
+                    <h3 class="my-profession">Soy {primera} <span class="typing">{ultima}</span></span></h3>
                     <p>{summary}</p>
-                    <a href="contact" class="btn hire-me">Hire Me</a>
+                    <a href="contact" class="btn hire-me">Mas sobre mi</a>
                 </div>
                 <div class="home-img padd-15">
                     <span class="h-i"></span>

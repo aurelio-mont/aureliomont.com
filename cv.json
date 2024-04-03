@@ -254,8 +254,19 @@
     }],
     "projects": [
       {
+        "name": "montExpress",
+        "isActive": true,
+        "screen": "montexpress.png",
+        "description": "Empresa dedicada al desarrollo web",
+        "highlights": [
+          "En desarrollo"
+        ],
+        "url": "https://montexpress.com.mx"
+      },
+      {
         "name": "mars.codes",
         "isActive": true,
+        "screen": "montexpress.png",
         "description": "Historia interactiva con retos de programación para viajar a Marte",
         "highlights": [
           "Elige tu propia aventura",
@@ -266,6 +277,7 @@
       {
         "name": "AdventJS",
         "isActive": true,
+        "screen": "montexpress.png",
         "description": "Retos de programación en JavaScript para cada día de diciembre hasta Navidad",
         "highlights": [
           "+1 millón de visitas",
@@ -277,6 +289,7 @@
       {
         "name": "Codember",
         "isActive": true,
+        "screen": "montexpress.png",
         "description": "Juego interactivo de programación con retos y secretos",
         "highlights": [
           "+2000 usuarios activos",
@@ -287,6 +300,7 @@
       {
         "name": "codi.link",
         "isActive": true,
+        "screen": "montexpress.png",
         "description": "Playground de código HTML, CSS y JavaScript para compartir",
         "highlights": [
           "100k visitas al mes",
@@ -298,6 +312,7 @@
       {
         "name": "Pruebas Técnicas",
         "isActive": true,
+        "screen": "montexpress.png",
         "description": "Lista de pruebas técnicas de empresas para practicar programación",
         "highlights": [
           "100% gratuito",
@@ -305,15 +320,6 @@
         ],
         "url": "https://pruebastecnicas.com",
         "github": "https://github.com/midudev/pruebas-tecnicas"
-      },
-      {
-        "name": "miduConf",
-        "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
-        "highlights": [
-          "+15k tickets repartidos",
-          "+50k espectadores en directo"
-        ],
-        "url": "https://miduconf.com"
       }
     ]
   }

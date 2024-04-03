@@ -1,0 +1,17 @@
+---
+import { projects } from "@cv"
+---
+
+{
+    projects.map(({ name, description, url, screen }) => {
+        return (
+        <div class="portfolio-item padd-25">
+            <div class="portflio-item-inner shadow-dark">
+                <div class="portflio-img">
+                    <img src={screen} alt={description}>
+                </div>
+            </div>
+        </div>
+        )
+    })
+}

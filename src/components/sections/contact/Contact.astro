@@ -1,0 +1,27 @@
+---
+import MainContent from "@/components/MainContent.astro"
+import ContactInfoItems from "@/components/sections/contact/ContactInfoItems.astro"
+import ContactForm from "@/components/sections/contact/ContactForm.astro"
+---
+<MainContent>
+    <div class="contact section">
+        <div class="container">
+            <div class="row">
+                <div class="section-title padd-15">
+                    <h2>Contáctame</h2>
+                </div>
+            </div>
+            <h3 class="contact-title padd-15">¿Tienes Algunas Preguntas?</h3>
+            <h4 class="contact-sub-title padd-15">Formas de contactarme</h4>
+            <div class="row">
+                <!-- Contact info items -->
+                <ContactInfoItems />
+            </div>
+            <h3 class="contact-title padd-15">Envíame Un Correo Electrónico</h3>
+            <h4 class="contact-sub-title padd-15">Siempre respondo a tus mensajes</h4>
+            <div class="row">
+                <ContactForm />
+            </div>
+        </div>
+    </div>
+</MainContent>

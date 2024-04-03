@@ -1,0 +1,67 @@
+---
+import { basics } from "@cv"
+const { profiles, location, phone, email, name, url } = basics
+---
+{
+  phone && (
+    <div class="contact-info-item padd-15">
+        <div class="icon">
+          <a
+              href={`tel:${phone}`}
+              title={`Llamar por teléfono a ${name} al número ${phone}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <i class="fa fa-phone"></i>
+            </a>
+        </div>
+          <h4>Llámanos al</h4>
+          <p>{phone}</p>
+    </div>
+    )  
+}
+{
+  location && (
+    <div class="contact-info-item padd-15">
+        <div class="icon"><i class="fa fa-location-dot"></i></div>
+          <h4>Oficina</h4>
+          <p>{location.city}, {location.countryCode}.</p>
+    </div>
+    )  
+}
+{
+  email && (
+    <div class="contact-info-item padd-15">
+      <div class="icon">
+        <a
+        href={`mailto:${email}`}
+        title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+          <i class="fa fa-envelope"></i>
+        </a>
+      </div>
+        <h4>Email</h4>
+        <p>{email}</p>
+    </div>
+  )
+}
+{
+  url && (
+    <div class="contact-info-item padd-15">
+      <div class="icon">
+        <a
+            href={`https://${url}`}
+            title={`Sitio web de ${name}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-globe-europe"></i>
+          </a>
+      </div>
+        <h4>Sitio Web</h4>
+        <p>{url}</p>
+    </div>
+  )
+}

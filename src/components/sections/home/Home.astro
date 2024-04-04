@@ -1,94 +1,30 @@
 ---
-import MainContent from "@/components/MainContent.astro"
-import { basics } from "@cv"
-const { name, label, summary, image } = basics
+import { basics } from "@cv";
+const { name, label, summary, image } = basics;
 
-let labelArray = label.split(' '),
-    ultima      = labelArray[labelArray.length - 1],
-    primera = label.split(ultima)[0]
-
+let labelArray = label.split(" "),
+  ultima = labelArray[labelArray.length - 1],
+  primera = label.split(ultima)[0];
 ---
-<MainContent>
-    <section class="home section">
-        <div class="container">
-            <div class="row">
-                <div class="home-info padd-15">
-                    <h3 class="hello">Hola, mi nombre es <span class="nane">{name}</span></h3>
-                    <h3 class="my-profession">Soy {primera} <span class="typing">{ultima}</span></span></h3>
-                    <p>{summary}</p>
-                    <a href="contact" class="btn hire-me">Mas sobre mi</a>
-                </div>
-                <div class="home-img padd-15">
-                    <span class="h-i"></span>
-                    <img src={image} alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-</MainContent>
 
-<style>
-    .home {
-        min-width: 100vh;
-        display: flex;
-        color: var(--text-black-900);
-    }
-    .home .home-info {
-        flex: 0 0 60%;
-        max-width: 60%;
-    }
-    p {
-        margin-bottom: 70px;
-        font-size: 20px;
-        color: var(--text-black-700);
-    }
-    .home .home-img {
-        flex: 0 0 40%;
-        max-width: 40%;
-        text-align: center;
-        position: relative;
-    }
-    .home-img::after {
-        content: '';
-        position: absolute;
-        height: 80px;
-        width: 80px;
-        border-bottom: 10px solid var(--skin-color);
-        border-right: 10px solid var(--skin-color);
-        right: 0px;
-        bottom: -20px ;
-    }
-    .home-img::before {
-        content: '';
-        position: absolute;
-        height: 80px;
-        width: 80px;
-        border-top: 10px solid var(--skin-color);
-        border-left: 10px solid var(--skin-color);
-        top: -30px;
-        left: 0px ;
-    }
-    h3.hello {
-        font-size: 20px;
-        margin: 15px 0;
-    }
-    h3.hello span {
-        font-family: 'Clicker Script', cursive;
-        font-size: 30px;
-        font-weight: 700;
-        color: var(--skin-color);
-    }
-    h3.my-profession {
-        font-size: 20px;
-        margin: 15px 0;
-    }
-    .typing{
-        color: var(--skin-color);
-    }
-    
-    .home .home-img img {
-        margin: auto;
-        border-radius: 5px;
-        height: 400px;
-    }
-</style>
+<section class="home section">
+  <div class="container">
+    <div class="row">
+      <div class="home-info padd-15">
+        <h3 class="hello">
+          Hola, mi nombre es <span class="nane">{name}</span>
+        </h3>
+        <h3 class="my-profession">
+          Soy {primera}
+          <span class="typing">{ultima}</span>
+        </h3>
+        <p>{summary}</p>
+        <a href="contact" class="btn hire-me">Mas sobre mi</a>
+      </div>
+      <div class="home-img padd-15">
+        <span class="h-i"></span>
+        <img src={image} alt="" />
+      </div>
+    </div>
+  </div>
+</section>

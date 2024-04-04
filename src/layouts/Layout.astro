@@ -1,20 +1,19 @@
 ---
-import '@fontsource/poppins'
-import '@fontsource/clicker-script'
-import '@/styles/styles.css'
+import "@fontsource/poppins";
+import "@fontsource/clicker-script";
 
-import { basics } from "@cv"
+import { basics } from "@cv";
 
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 
-const { image, summary, url } = basics
+const { image, summary, url } = basics;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -31,15 +30,37 @@ const { image, summary, url } = basics
     <meta property="og:image" content="" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
+    <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
     <meta name="twitter:image" content="" />
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/color-1.css">
+    <link rel="stylesheet" href="styles/style-switcher.css">
   </head>
   <body>
-    <slot />
+    <main class="main-content">
+      <slot />
+    </main>
+    <div class="style-switcher">
+      <div class="style-switcher-toggler s-icon">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <div class="day-nigth s-icon">
+        <i class="fas fa-moon"></i>
+      </div>
+      <h4>Tema de Colores</h4>
+      <div class="colors">
+        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+      </div>
+    </div>
   </body>
 </html>
 
-<script src="https://kit.fontawesome.com/036b039b74.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/036b039b74.js" crossorigin="anonymous"
+></script>

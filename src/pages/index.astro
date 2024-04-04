@@ -1,22 +1,21 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import Aside from "@/components/Aside.astro"
-import Home from "@/components/sections/home/Home.astro"
-import About from "@/components/sections/about/About.astro"
-import Services from "@/components/sections/services/Services.astro"
-import Portfolio from "@/components/sections/portfolio/Portfolio.astro"
-import Contact from "@/components/sections/contact/Contact.astro"
+import Layout from "@/layouts/Layout.astro";
+import Aside from "@/components/Aside.astro";
+import Home from "@/components/sections/home/Home.astro";
+import About from "@/components/sections/about/About.astro";
+import Services from "@/components/sections/services/Services.astro";
+import Portfolio from "@/components/sections/portfolio/Portfolio.astro";
+import Contact from "@/components/sections/contact/Contact.astro";
 
-import { basics } from "@cv"
-const { name, label } = basics
+import { basics } from "@cv";
+const { name, label } = basics;
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
-		<Aside />
-		<Home />
-		<About />
-		<Services />
-		<Portfolio />
-		<Contact />
+  <Aside />
+  <Home />
+  <About />
+  <Services />
+  <Portfolio />
+  <Contact />
 </Layout>
-

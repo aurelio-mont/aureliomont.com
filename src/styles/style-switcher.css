@@ -65,18 +65,18 @@
     border: 1px solid var(--text-black-700);
 }
 
-.style-switcher .color-1 {
+.style-switcher .colorA {
     background: #ec1839;
 }
-.style-switcher .color-2 {
+.style-switcher .colorB {
     background: #fa5b0f;
 }
-.style-switcher .color-3 {
+.style-switcher .colorC {
     background: #37b182;
 }
-.style-switcher .color-4 {
+.style-switcher .colorD {
     background: #1854b4;
 }
-.style-switcher .color-5 {
+.style-switcher .colorF {
     background: #f021b2;
 }

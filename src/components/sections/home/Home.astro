@@ -2,12 +2,10 @@
 import { basics } from "@cv";
 const { name, label, summary, image } = basics;
 
-let labelArray = label.split(" "),
-  ultima = labelArray[labelArray.length - 1],
-  primera = label.split(ultima)[0];
+
 ---
 
-<section class="home section">
+<section class="home section" id="home">
   <div class="container">
     <div class="row">
       <div class="home-info padd-15">
@@ -15,8 +13,7 @@ let labelArray = label.split(" "),
           Hola, mi nombre es <span class="nane">{name}</span>
         </h3>
         <h3 class="my-profession">
-          Soy {primera}
-          <span class="typing">{ultima}</span>
+          Soy <span class="typing">{label}</span>
         </h3>
         <p>{summary}</p>
         <a href="contact" class="btn hire-me">Mas sobre mi</a>

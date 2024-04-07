@@ -6,6 +6,23 @@
   --text-black-700: #504e70;
   --text-black-50: #aba6f3;
 }
+
+body.colorA {
+  --skin-color: #ec1839;
+}
+
+body.colorB {
+  --skin-color: #fa5b0f;
+}
+body.colorC {
+  --skin-color: #37b182;
+}
+body.colorD {
+  --skin-color: #1854b4;
+}
+body.colorF {
+  --skin-color: #f021b2;
+}
 body.dark {
   --bg-black-900: #151515;
   --bg-black-100: #222222;

@@ -323,7 +323,11 @@ ul {
   border-radius: 5px;
   height: 400px;
 }
-
+.about {
+  min-width: 100vh;
+  display: flex;
+  color: var(--text-black-900);
+}
 .about .about-content {
   flex: 0 0 100%;
   max-width: 100%;
@@ -482,6 +486,11 @@ ul {
   color: var(--text-black-700);
 }
 
+.services {
+  min-width: 100vh;
+  display: flex;
+  color: var(--text-black-900);
+}
 .services .service-item {
   margin-bottom: 30px;
   flex: 0 0 33.33%;
@@ -546,6 +555,13 @@ ul {
   text-align: justify;
 }
 
+.portfolio {
+  min-width: 100vh;
+  display: flex;
+  color: var(--text-black-900);
+}
+
+
 .portfolio .container {
   padding-bottom: 40px;
 }
@@ -577,6 +593,12 @@ ul {
 .portfolio .portflio-item-inner .portflio-img img {
   width: 100%;
   display: block;
+}
+
+.contact {
+  min-width: 100vh;
+  display: flex;
+  color: var(--text-black-900);
 }
 
 .contact-title {
@@ -674,6 +696,7 @@ ul {
   }
   .main-content {
     padding-left: 0;
+    
   }
   .about .about-content .personal-info .info-item p span {
     display: block;

@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "/home/aurelio/Code/aureliomont.com",
+    "baseUrl": ".",
     "paths": {
       "@cv": [
         "./cv.json"

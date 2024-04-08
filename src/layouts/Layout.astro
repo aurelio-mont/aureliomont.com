@@ -5,9 +5,11 @@ import "@fontsource/clicker-script";
 import "@/styles/styles.css"
 import "@/styles/style-switcher.css"
 
+import "@/scripts/sc"
+
 import { basics } from "@cv";
 
-import WorldMap from "@/icons/WorldMap.astro"
+import Aside from "@/components/Aside.astro";
 
 interface Props {
   title: string;
@@ -42,6 +44,7 @@ const { image, summary, url } = basics;
     <meta name="twitter:image" content="" />
   </head>
   <body class="colorA dark">
+    <Aside />
     <main class="main-content">
       <slot />
     </main>
@@ -73,6 +76,34 @@ const { image, summary, url } = basics;
         backSpeed: 60,
         loop: true,
       });
+      const nav = document.querySelector(".nav");
+      const navList = nav.querySelectorAll("li");
+      const totalNavList = navList.length;
+      const allSections = document.querySelectorAll(".section");
+      const totalSection = allSections.length;
+      for (let i=0; i<totalNavList; i++) {
+        const a = navList[i].querySelector("a");
+        a.addEventListener("click", function() {
+          for (let i=0; i<totalSection; i++) {
+            allSections[i].classList.remove("back-section");
+         }
+          for (let j=0; j<totalNavList; j++) {
+            if (navList[j].querySelector("a").classList.contains("active")) {
+              allSections[j].classList.add("back-section");
+            }
+            navList[j].querySelector("a").classList.remove("active");
+          }
+          this.classList.add("active");
+          showSection(this);
+        })
+      }
+      function showSection(element) {
+        for (let i=0; i<totalSection; i++) {
+          allSections[i].classList.remove("active");
+        }
+        const target = element.getAttribute("href").split("#")[1];
+        document.querySelector("#"+ target).classList.add("active");
+      }
     </script>
   </body>
 </html>

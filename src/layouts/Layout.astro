@@ -95,6 +95,9 @@ const { image, summary, url } = basics;
           }
           this.classList.add("active");
           showSection(this);
+          if (window.innerWidth < 1200 ) {
+            asideSectionTogglerBtn();
+          }
         })
       }
       function showSection(element) {
@@ -103,6 +106,18 @@ const { image, summary, url } = basics;
         }
         const target = element.getAttribute("href").split("#")[1];
         document.querySelector("#"+ target).classList.add("active");
+      }
+      const navTogglerBtn = document.querySelector(".nav-toggler");
+      const aside = document.querySelector(".aside");
+      navTogglerBtn.addEventListener("click", () => {
+        asideSectionTogglerBtn();
+      });
+      function asideSectionTogglerBtn() {
+        aside.classList.toggle("open");
+        navTogglerBtn.classList.toggle("open");
+        for (let i=0; i<totalSection; i++) {
+            allSections[i].classList.toggle("open");
+         }
       }
     </script>
   </body>

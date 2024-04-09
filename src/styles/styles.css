@@ -217,9 +217,6 @@ ul {
   overflow-y: auto;
   overflow-x: hidden;
   transition: all 0.3s ease;
-  &.is-full-width {
-    margin-left: -270px;
-  }
 }
 
 .container {
@@ -781,12 +778,14 @@ ul {
   }
   .aside .nav-toggler.open {
     left: 300px;
+
   }
   .section {
     width: 100%;
     left: 0;
   }
   .section.open {
+    width: 80%;
     left: 270px;
   }
   .about .about-content .personal-info .info-item p span {

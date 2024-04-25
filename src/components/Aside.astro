@@ -1,14 +1,15 @@
 ---
+import "@/styles/Aside.css";
 import { basics } from "@cv";
 const { branch } = basics;
 ---
 
 <div class="aside">
-  <div class="logo">
-    <a href="/"><span>{branch.substring(0, 1)}</span>{branch.substring(1)}</a>
-  </div>
-  <div class="nav-toggler">
+  <div class="aside__nav-toggler">
     <span></span>
+  </div>
+  <div class="aside__logo">
+    <a href="/"><span>{branch.substring(0, 1)}</span>{branch.substring(1)}</a>
   </div>
   <ul class="nav">
     <li><a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
@@ -18,3 +19,14 @@ const { branch } = basics;
     <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
   </ul>
 </div>
+<script type="module">
+  const aside = document.querySelector(".aside");
+  const navTogglerBtn = document.querySelector(".aside__nav-toggler");
+  navTogglerBtn.addEventListener("click", () => {
+    asideSectionTogglerBtn();
+  });
+  function asideSectionTogglerBtn() {
+    aside.classList.toggle("open");
+    navTogglerBtn.classList.toggle("open");
+  }
+</script>

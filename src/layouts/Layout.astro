@@ -2,15 +2,12 @@
 import "@fontsource/poppins";
 import "@fontsource/clicker-script";
 
-import "@/styles/styles.css"
-import "@/styles/style-switcher.css"
-
-import "@/scripts/sc"
+import "@/styles/Layout.css"
 
 import { basics } from "@cv";
 
 import Aside from "@/components/Aside.astro";
-
+import Custom from "@/components/Custom.astro"
 interface Props {
   title: string;
 }
@@ -26,16 +23,14 @@ const { image, summary, url } = basics;
     <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="description" content={summary} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href={image} />
-
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={summary} />
     <meta property="og:image" content="" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
     <meta property="twitter:url" content={url} />
@@ -44,145 +39,17 @@ const { image, summary, url } = basics;
     <meta name="twitter:image" content="" />
   </head>
   <body class="colorA dark">
+    <Aside />
     <div class="main">
-      <Aside />
       <main class="main-content">
         <slot />
       </main>
     </div>
-    <div class="style-switcher">
-      <div class="style-switcher-toggler s-icon">
-        <i class="fas fa-cog fa-spin"></i>
-      </div>
-      <div class="day-nigth s-icon">
-        <i class="fas fa-moon"></i>
-      </div>
-      <h4>Tema de Colores</h4>
-      <div class="colors">
-        <span class="colorA" onclick="setActiveStyle('colorA')"></span>
-        <span class="colorB" onclick="setActiveStyle('colorB')"></span>
-        <span class="colorC" onclick="setActiveStyle('colorC')"></span>
-        <span class="colorD" onclick="setActiveStyle('colorD')"></span>
-        <span class="colorF" onclick="setActiveStyle('colorF')"></span>
-      </div>
-    </div>
+    <Custom />
     <script
       src="https://kit.fontawesome.com/036b039b74.js"
       crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script type="module" >
-      //* Typing animation
-      const typed = new Typed(".typing", {
-        strings: [" ","Web Designer", "Web Developer", "Graphic Designer"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true,
-      });
-      const nav = document.querySelector(".nav");
-      const navList = nav.querySelectorAll("li");
-      const totalNavList = navList.length;
-      const allSections = document.querySelectorAll(".section");
-      const totalSection = allSections.length;
-      for (let i=0; i<totalNavList; i++) {
-        const a = navList[i].querySelector("a");
-        a.addEventListener("click", function() {
-          removeBackSection();
-          for (let j=0; j<totalNavList; j++) {
-            if (navList[j].querySelector("a").classList.contains("active")) {
-              addBackSection(j);
-            }
-            navList[j].querySelector("a").classList.remove("active");
-          }
-          this.classList.add("active");
-          showSection(this);
-          if (window.innerWidth < 1200 ) {
-            asideSectionTogglerBtn();
-          }
-        })
-      }
-      function addBackSection(i) {
-        allSections[i].classList.add("back-section");
-      }
-      function removeBackSection() {
-        for (let i=0; i<totalSection; i++) {
-            allSections[i].classList.remove("back-section");
-          }
-      }
-      function showSection(element) {
-        for (let i=0; i<totalSection; i++) {
-          allSections[i].classList.remove("active");
-        }
-        const target = element.getAttribute("href").split("#")[1];
-        document.querySelector("#"+ target).classList.add("active");
-      }
-      const navTogglerBtn = document.querySelector(".nav-toggler");
-      const aside = document.querySelector(".aside");
-      navTogglerBtn.addEventListener("click", () => {
-        asideSectionTogglerBtn();
-      });
-      function updateNav(element) {
-        for (let i=0; i<totalNavList; i++) {
-          navList[i].querySelector("a").classList.remove("active");
-          const target = element.getAttribute("href").split("#")[1];
-          if (target === navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
-            navList[i].querySelector("a").classList.add("active");
-          }
-          if (navList[i].querySelector("a").classList.contains("active")) {
-            addBackSection(i);
-          }
-        }
-      }
-      const btnHireMe =document.querySelector("#hi");
-      btnHireMe.addEventListener("click", () => {
-        const sectionIndex = btnHireMe.getAttribute("data-section-index");
-        showSection(btnHireMe);
-        updateNav(btnHireMe);
-        removeBackSection();
-        addBackSection(sectionIndex);
-      });
-      function asideSectionTogglerBtn() {
-        aside.classList.toggle("open");
-        navTogglerBtn.classList.toggle("open");
-        for (let i=0; i<totalSection; i++) {
-            allSections[i].classList.toggle("open");
-         }
-      }
-    </script>
+    
   </body>
 </html>
-<script is:inline>
-  const styleSwitcherToggle = document.querySelector(".style-switcher-toggler");
-  styleSwitcherToggle?.addEventListener("click", () => {
-    document.querySelector(".style-switcher")?.classList.toggle("open");
-  });
-
-  window.addEventListener("scroll", () => {
-    if (document.querySelector(".style-switcher")?.classList.contains("open")) {
-      document.querySelector(".style-switcher")?.classList.remove("open");
-    }
-  });
-
-  const bodyClass = document.body.classList; 
-  const themesCalss =  ["colorA", "colorB", "colorC", "colorD", "colorF"]
-  function setActiveStyle(color) {
-    bodyClass.forEach((c)=>{
-      themesCalss.find((c)=>{
-        document.body.classList.replace(c, color)
-      });
-    })
-  }
-
-  const dayNigth = document.querySelector(".day-nigth");
-  dayNigth.addEventListener("click", () => {
-    dayNigth.querySelector("i").classList.toggle("fa-sun");
-    dayNigth.querySelector("i").classList.toggle("fa-moon");
-    document.body.classList.toggle("dark");
-  });
-  window.addEventListener("load", () => {
-    if (document.body.classList.contains("dark")) {
-      dayNigth.querySelector("i").classList.replace("fa-moon", "fa-sun");
-    } else {
-      dayNigth.querySelector("i").classList.add("fa-moon");
-    }
-  });
-</script>

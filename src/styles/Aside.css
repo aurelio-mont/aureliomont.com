@@ -1,0 +1,78 @@
+.aside {
+  width: 17rem;
+  background: var(--bg-black-100);
+  position: fixed;
+  left: -17rem;
+  top: 0;
+  padding: 2rem;
+  height: 100%;
+  border-right: 0.0625rem solid var(--bg-black-50);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.aside.open {
+  left: 0rem;
+}
+.aside__nav-toggler {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 0.0625rem solid var(--text-black-50);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  position: fixed;
+  left: 0.3rem;
+  top: 1rem;
+  background: var(--bg-black-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.aside__nav-toggler.open {
+  left: 17.3rem;
+}
+
+.aside__nav-toggler span {
+  height: 0.13rem;
+  width: 1.35rem;
+  background: var(--skin-color);
+  display: inline-block;
+  position: relative;
+}
+
+.aside__nav-toggler.open span {
+  background-color: transparent;
+}
+
+.aside__nav-toggler span::before {
+  content: "";
+  height: 0.13rem;
+  width: 1.35rem;
+  background: var(--skin-color);
+  position: absolute;
+  top: -0.4rem;
+  left: 0;
+}
+
+.aside__nav-toggler.open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.aside__nav-toggler span::after {
+  content: "";
+  height: 0.13rem;
+  width: 1.35rem;
+  background: var(--skin-color);
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+}
+.aside__nav-toggler.open span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
